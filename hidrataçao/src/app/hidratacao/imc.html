@@ -1,0 +1,20 @@
+<div class="container">
+    <h1><strong>Calculadora de Ingestão Diária de Água</strong></h1>
+
+    <p>Peso:</p>
+    <input type="number" [(ngModel)]="peso" placeholder="Peso Ex:75">
+
+    <p>Selecione um nível de atividade:</p>
+    <button (click)="nivelAtividade = 1.0">Sedentário (1.0)</button>
+    <button (click)="nivelAtividade = 1.2">Moderado (1.2)</button>
+    <button (click)="nivelAtividade = 1.5">Intenso (1.5)</button>
+   
+    <p>Multiplicador: {{ nivelAtividade }}</p>
+
+    <button (click)="calcularIngestao()">Enviar</button>
+
+    <div class="resultado" *ngIf="resultado">
+        <h3><strong>{{ resultado }}</strong></h3>
+        <h2><strong>{{ aviso }}</strong></h2>
+    </div>
+</div>
